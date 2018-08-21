@@ -35,27 +35,31 @@
 		return {
 			main : x=>{
 				alert('컨텍스트패스 :'+x)
-				document.getElementById('goAdmin').addEventListener('click',function(){
-					var isAdmin = confirm("관리자 입니까?");
-					if(isAdmin){
-						var password = prompt("관리자 비밀번호를 입력하세요.");
-						if(password== 1){
-							router.move({
-								context : x,
-								domain : 'admin',
-								action:'search',
-								page : 'main',
-							});
-						}else{
-							alert('관리자 외에 접근이 불가합니다.');
+				if(document.getElementById('goAdmin')!=null){
+					document.getElementById('goAdmin').addEventListener('click',function(){
+						var isAdmin = confirm("관리자 입니까?");
+						if(isAdmin){
+							var password = prompt("관리자 비밀번호를 입력하세요.");
+							if(password== 1){
+								router.move({
+									context : x,
+									domain : 'admin',
+									action:'search',
+									page : 'main',
+								});
+							}else{
+								alert('관리자 외에 접근이 불가합니다.');
+							}
 						}
-					}
-				});
-				document.getElementById("goHome").addEventListener('click',function(){ //콜백함수
-					router.move({context : x,
-						domain : 'common'}
-						);
-				});	
+					});
+				}
+				if(document.getElementById("goHome")!=null){
+					document.getElementById("goHome").addEventListener('click',function(){ //콜백함수
+						router.move({context : x,
+							domain : 'common'}
+							);
+					});	
+				}
 				if(document.getElementById("moveLogin")!=null){
 					document.getElementById("moveLogin").addEventListener('click',function(){ //콜백함수
 						router.move({context : x,
