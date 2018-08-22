@@ -26,7 +26,7 @@ public class HomeController {
 		String context = request.getContextPath();
 		logger.info("Welcome home! The context path is {}.", context);
 		session.setAttribute("context", context);
-		return "main";
+		return "public:common/content.tiles";
 	}
 	
 }
