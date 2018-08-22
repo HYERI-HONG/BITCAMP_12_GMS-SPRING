@@ -1,5 +1,4 @@
 "use strict";
-
 var app = app || {}
 var app={
 	init : x =>{
