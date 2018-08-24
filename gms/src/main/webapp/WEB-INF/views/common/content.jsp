@@ -6,14 +6,15 @@
 					<div class="row fullscreen align-items-center justify-content-between">
 						<div class="col-lg-6 col-md-6 banner-left">
 							<h6>THIS HOME PAGE IS</h6>
-							<h1>GRADE MANAGEMENT SYSTEM</h1>
+							<h1>당대 최고의 가수 <br>홍★혜★리★</h1>
 							<p>
-								This is result of my effort to improve programming skill using JAVA,SQL,JS,HTML and CSS etc.
+								하하하
 							</p>
 							<a href="#" class="primary-btn text-uppercase">Let's start!</a>
 						</div>
 						<div class="col-lg-6 col-md-6 banner-right d-flex align-self-end">
-							<img class="img-fluid" src="${context}/resources/img/hero-img.png" alt="">
+							<iframe width="640" height="360" src="https://www.youtube.com/embed/AZCagQKbzcI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+							<%-- <img class="img-fluid" src="${context}/resources/img/hero-img.png" alt=""> --%>
 						</div>
 					</div>
 				</div>					

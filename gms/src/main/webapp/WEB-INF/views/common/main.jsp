@@ -31,16 +31,17 @@
 			<link rel="stylesheet" href="${context}/resources/css/animate.min.css">
 			<link rel="stylesheet" href="${context}/resources/css/owl.carousel.css">				
 			<link rel="stylesheet" href="${context}/resources/css/main.css">
+			<link rel="stylesheet" href="${context}/resources/css/style.css" />
 </head>
 	<body>
 		<div id="wrapper">
-			<div id="header">
+			<div id="top">
 				<tiles:insertAttribute name="header"></tiles:insertAttribute>
 			</div>
-			<div id="content">
+			<div id="middle">
 				<tiles:insertAttribute name="content"></tiles:insertAttribute>
 			</div>
-			<div id="footer">
+			<div id="bottom">
 				<tiles:insertAttribute name="footer"></tiles:insertAttribute>
 			</div>
 		</div>
