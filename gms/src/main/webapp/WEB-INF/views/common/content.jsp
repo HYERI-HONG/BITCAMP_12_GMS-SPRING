@@ -5,10 +5,10 @@
 				<div class="container">
 					<div class="row fullscreen align-items-center justify-content-between">
 						<div class="col-lg-6 col-md-6 banner-left">
-							<h6>THIS HOME PAGE IS</h6>
-							<h1>당대 최고의 가수 <br>홍★혜★리★</h1>
+							<h6>동해가 자랑하는 </h6>
+							<h1>당대 최고의 가수 <br>★홍★혜★리★</h1>
 							<p>
-								하하하
+								천년 만년
 							</p>
 							<a href="#" class="primary-btn text-uppercase">Let's start!</a>
 						</div>

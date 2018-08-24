@@ -206,6 +206,35 @@
 			<version>${tiles-version}</version>
 		</dependency>
 		
+		<!-- Mybatis 3.4.1. -->
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis</artifactId>
+		    <version>${mybatis-version}</version>
+		</dependency>
+		
+		<!-- Mybatis-spring 1.3.0 -->
+		<dependency>
+		    <groupId>org.mybatis</groupId>
+		    <artifactId>mybatis-spring</artifactId>
+		    <version>${mybatis-spring-version}</version>
+		</dependency>
+
+		
+		<!-- commons-dbcp 1.4 -->
+		<dependency>
+		    <groupId>commons-dbcp</groupId>
+		    <artifactId>commons-dbcp</artifactId>
+		    <version>1.4</version>
+		</dependency>
+		
+		<!-- mariadb-java-client 2.1.1 -->
+		<dependency>
+            <groupId>org.mariadb.jdbc</groupId>
+            <artifactId>mariadb-java-client</artifactId>
+            <version>2.1.1</version>
+        </dependency>
+		
 		<!-- Test -->
 		<dependency>
 			<groupId>junit</groupId>
