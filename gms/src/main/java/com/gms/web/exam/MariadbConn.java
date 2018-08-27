@@ -1,5 +1,4 @@
 package com.gms.web.exam;
-
 import java.sql.*;
 
 public class MariadbConn {
@@ -23,7 +22,6 @@ public class MariadbConn {
 	         }else {
 	         	s ="연결 실패";
 	         }
-	         
 	     } catch (Exception e) {
 	         e.printStackTrace();
 	     }
