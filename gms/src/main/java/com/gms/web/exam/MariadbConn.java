@@ -14,11 +14,11 @@ public class MariadbConn {
 	        		 "mariadb");
 	         stmt = conn.createStatement();
 	         String sql = String.format(
-	                 "SELECT USERID FROM MEMBER"
+	                 "SELECT NAME FROM MEMBER WHERE USERID LIKE 'a01'"
 	         );
 	         ResultSet rs = stmt.executeQuery(sql);            
 	         if(rs.next()) {
-	             s = rs.getString("USERID");
+	             s = rs.getString("NAME");
 	         }else {
 	         	s ="연결 실패";
 	         }
