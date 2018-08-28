@@ -9,7 +9,8 @@
 		비밀번호 확인: <br>
 		<input id="password" type="password" name="password"/>
 		<br><br>
-		<input id="deleteConfirmBtn" type="button" value ="탈퇴" />
+		
+		<input id="delete_submit" type="button" value ="탈퇴" />
 		</form>
 	</div>
 </div>

@@ -7,9 +7,9 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-
 import com.gms.web.domain.MemberDTO;
 import com.gms.web.repository.MemberDAO;
+
 @Repository
 public class MemberMapper implements MemberDAO{
 	@Autowired SqlSessionFactory factory;
@@ -17,10 +17,10 @@ public class MemberMapper implements MemberDAO{
 			"com.gms.web.mapper.MemberMapper";
 	@Override
 	public void insert(MemberDTO p) {
-		// TODO Auto-generated method stub
+		SqlSession sqlSession = factory.openSession();
+		sqlSession.insert(ns+".insert",p);
 		
 	}
-
 	@Override
 	public List<?> selectList(Map<?, ?> p) {
 		// TODO Auto-generated method stub
@@ -34,9 +34,9 @@ public class MemberMapper implements MemberDAO{
 	}
 
 	@Override
-	public MemberDTO selectOne(Map<?, ?> p) {
+	public MemberDTO selectOne(String p) {
 		SqlSession sqlSession = factory.openSession();
-		return (MemberDTO)sqlSession.selectOne(ns+".selectOne",p);
+		return sqlSession.selectOne(ns+".selectOne",p);
 	}
 
 	@Override
@@ -46,21 +46,23 @@ public class MemberMapper implements MemberDAO{
 	}
 
 	@Override
-	public void update(Map<?, ?> p) {
-		// TODO Auto-generated method stub
+	public void update(MemberDTO p) {
+		SqlSession sqlSession = factory.openSession();
+		sqlSession.update(ns+".update",p);
 		
 	}
 
 	@Override
-	public void delete(Map<?, ?> p) {
-		// TODO Auto-generated method stub
+	public void delete(MemberDTO p) {
+		SqlSession sqlSession = factory.openSession();
+		sqlSession.delete(ns+".delete",p);
 		
+	}
+	@Override
+	public boolean login(MemberDTO p) {
+		SqlSession sqlSession = factory.openSession();
+		return (sqlSession.selectOne(ns+".login",p)!=null);
 	}
 
-	@Override
-	public void login(Map<?, ?> p) {
-		// TODO Auto-generated method stub
-		
-	}
 
 }

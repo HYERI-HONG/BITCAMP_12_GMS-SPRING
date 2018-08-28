@@ -66,6 +66,7 @@
 		<script src="${context}/resources/js/main.js"></script>	
 		<script>
 			app.init('${context}');	
+			user.setUser('${user}');
 		</script>	
 	</body>
 </html>

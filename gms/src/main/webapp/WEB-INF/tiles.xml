@@ -12,6 +12,6 @@
 	</definition>
 	<definition name="login_success" extends="public">
 		<put-attribute name="header" value="/WEB-INF/views/member/header.jsp"/>
-		<put-attribute name="content" value="/WEB-INF/views/common/content.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/member/retrieve.jsp"/>
 	</definition>
 </tiles-definitions>

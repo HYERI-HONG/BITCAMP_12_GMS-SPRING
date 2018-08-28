@@ -1,5 +1,6 @@
 package com.gms.web.service.impl;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -14,8 +15,42 @@ public class MemberServiceImpl implements MemberService{
 	@Autowired MemberDAO memberDAO;
 	@Override
 	public void add(MemberDTO p) {
-		// TODO Auto-generated method stub
 		
+		//--------------------Age-----------------//
+		Date date = new Date();
+		String ssn = p.getSsn();
+		
+		int toYear = date.getYear()+1900;
+		int toMonth = date.getMonth()+1;
+		int toDay = date.getDate();
+		
+		int birYear = Integer.parseInt(ssn.substring(0, 2));
+		int birMonth = Integer.parseInt(ssn.substring(2, 4));
+		int birDay = Integer.parseInt(ssn.substring(4, 6));
+		
+		birYear = birYear>18&&birYear<=99 ? 
+				Integer.parseInt("19"+String.valueOf(birYear))
+				:
+					Integer.parseInt("20"+String.valueOf(birYear));
+
+		int age = ((birMonth*100+birDay)>(toMonth*100+toDay))? toYear-birYear-1:toYear-birYear;
+		p.setAge(String.valueOf(age));
+		
+		//--------------------Gender-----------------//
+		char genderNum = ssn.charAt(7);
+		String gender="";
+
+		if(genderNum=='1'||genderNum=='3'){
+			gender="남자";
+		}else if(genderNum=='2'||genderNum=='4'){
+			gender="여자";
+		}else if(genderNum=='5'||genderNum=='6'){
+			gender="외국인";
+		}	
+		p.setGender(gender);	
+		
+		System.out.println("age : "+age+" gender :"+gender);
+		memberDAO.insert(p);
 	}
 
 	@Override
@@ -31,11 +66,10 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public MemberDTO retrieve(Map<?, ?> p) {
-		
+	public MemberDTO retrieve(String p) {
 		return memberDAO.selectOne(p);
 	}
-
+	
 	@Override
 	public void count(Map<?, ?> p) {
 		// TODO Auto-generated method stub
@@ -43,21 +77,19 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public void modify(Map<?, ?> p) {
-		// TODO Auto-generated method stub
+	public void modify(MemberDTO p) {
+		memberDAO.update(p);
 		
 	}
 
 	@Override
-	public void remove(Map<?, ?> p) {
-		// TODO Auto-generated method stub
+	public void remove(MemberDTO p) {
+		memberDAO.delete(p);
 		
 	}
 
 	@Override
-	public void login(Map<?, ?> p) {
-		// TODO Auto-generated method stub
-		
+	public boolean login(MemberDTO p) {
+		return memberDAO.login(p);
 	}
-
 }

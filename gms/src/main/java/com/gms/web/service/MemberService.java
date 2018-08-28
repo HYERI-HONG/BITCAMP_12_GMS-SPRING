@@ -8,9 +8,9 @@ public interface MemberService {
 	public void add(MemberDTO p);
 	public List<?> list(Map<?,?> p);
 	public List<?> search(Map<?,?> p);
-	public MemberDTO retrieve(Map<?,?> p);
+	public MemberDTO retrieve(String p);
 	public void count(Map<?,?> p);
-	public void modify(Map<?,?> p);
-	public void remove(Map<?,?> p);
-	public void login(Map<?,?> p);
+	public void modify(MemberDTO p);
+	public void remove(MemberDTO p);
+	public boolean login(MemberDTO p);
 }

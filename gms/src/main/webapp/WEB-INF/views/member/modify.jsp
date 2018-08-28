@@ -5,17 +5,17 @@
 		<div id="update_content">
 			<h2 align="center">회원 정보 변경</h2>
 			<form id ="updateForm" name="updateForm">
-			<h4>아이디 : ${user.userId}</h4>
+			<h4>아이디 : 아무개</h4>
 			 <br>
 			기존 비밀번호 : <br>
 			<input type="text" name="before_pass"/>
 			 <br>
 			변경할 비밀번호 : <br>
-			<input type="text" name="after_pass" placeholder="${user.password}"/>
+			<input type="text" name="after_pass" placeholder="${user.setUser.sessionStorage.getItem('password')}"/>
 			
 			<br>
 			소속팀 : <br>
-			<select name="teamId" id="teamId" class="${user.teamId}">
+			<select name="teamid" id="teamid" class="">
 			<option class="team-opt" value="GG">지은이랑지은집팀</option>
 			<option class="team-opt" value="LP">레츠플레이팀</option>
 			<option class="team-opt" value="TurtleKing">거북왕팀</option>
@@ -32,7 +32,7 @@
 			<option class="roll-opt" value="무임승차">무임승차</option>
 			</select>
 			<br><br>
-			<input type="button" id=updateConfirmBtn value ="변경" />
+			<input type="button" id="update_submit" value ="변경" />
 			</form>
 		</div>
 	</div>
