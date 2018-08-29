@@ -12,8 +12,8 @@
   	INSERT INTO MEMBER(USERID,SSN,NAME,ROLL,TEAMID,PASSWORD,AGE,GENDER)
 	VALUES(#{userid},#{ssn},#{name},#{roll},#{teamid},#{password},#{age},#{gender})
   </insert>
-	<select id="login" resultType="com.gms.web.domain.MemberDTO">
-	SELECT USERID FROM MEMBER
+	<select id="login" resultType="string">
+	SELECT COUNT(USERID) FROM MEMBER
 	WHERE USERID LIKE #{userid}
 	AND PASSWORD LIKE #{password}
 	</select>

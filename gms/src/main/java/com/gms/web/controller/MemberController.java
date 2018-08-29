@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -30,10 +31,12 @@ public class MemberController {
 	@RequestMapping("/search")
 	public void search() {}
 	
-	@RequestMapping("/retrieve")
-	public String retrieve(@ModelAttribute MemberDTO member, Model model) {
-		model.addAttribute("user", memberService.retrieve(member.getUserid()));
-		return "";
+	@RequestMapping("/retrieve/{userid}")
+	public String retrieve( Model model, 
+			@PathVariable String userid) {
+		logger.info("MemberController ::: retrieve(){}");
+		model.addAttribute("user", memberService.retrieve(userid));
+		return "private:member/retrieve.tiles";
 	}
 	@RequestMapping("/count")
 	public void count() {}
@@ -42,23 +45,24 @@ public class MemberController {
 	@RequestMapping(value="/modify", method=RequestMethod.POST)
 	public String modify(@RequestParam Map<String,String> map , Model model) {
 		logger.info("MemberController ::: modify(){}");
-		map.put("userid", "a01");
+		logger.info("userid"+map.get("userid"));
 		memberService.modify(map);
 		model.addAttribute("user", memberService.retrieve(map.get("userid")));
-		return "mypage";
+		return "private:member/retrieve.tiles";
 	}
 	@RequestMapping(value="/remove", method=RequestMethod.POST)
-	public void remove(@ModelAttribute MemberDTO member) {
+	public String remove(@ModelAttribute MemberDTO member) {
 		logger.info("MemberController ::: remove(){}");
-		member.setUserid("t1");
+		logger.info("password :"+member.getPassword());
+		logger.info("userid :"+member.getUserid());
 		memberService.remove(member);
-		
+		return "redirect:/";
 	}
 	
 	@RequestMapping(value="/login", method=RequestMethod.POST )
 	public String login(@ModelAttribute("member") MemberDTO member, Model model) {
 		logger.info("MemberController ::: login(){}");
-		String rs ="mypage";
+		String rs ="log:member/retrieve.tiles";
 		if(memberService.login(member)) {
 			model.addAttribute("user", memberService.retrieve(member.getUserid()));
 		}else {
@@ -69,7 +73,7 @@ public class MemberController {
 	@RequestMapping("/logout")
 	public String logout() {
 		logger.info("MemberController ::: logout(){}");
-		return "redirect:/";
+		return "log:common/content.tiles";
 	}
 	@RequestMapping("/fileupload")
 	public void fileupload() {}

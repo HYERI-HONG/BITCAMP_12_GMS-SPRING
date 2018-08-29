@@ -5,10 +5,11 @@
 		<h2 align="center">회원 정보 변경</h2>
 		<br>
 		<form id ="modifyForm" name="modifyForm">
-			<h5>아이디 :</h5>
+			<h5>아이디 : </h5><h5 id="modifyuserid"></h5>
+			<input id="userid" type="hidden"/>
 			 <br>
 			기존 비밀번호 : <br>
-			<input type="text" name="before_pass"/>
+			<input id="" type="text" name="before_pass"/>
 			 <br>
 			변경할 비밀번호 : <br>
 			<input type="text" name="after_pass"/>
@@ -42,7 +43,9 @@
  	<input type="submit" value="파일 업로드">
 	</form> --%>
 
-
+<script>
+	user.modify();
+</script>
 
 
 

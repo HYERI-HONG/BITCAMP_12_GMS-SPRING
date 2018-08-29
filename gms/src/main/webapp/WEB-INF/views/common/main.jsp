@@ -32,11 +32,33 @@
 			<link rel="stylesheet" href="${context}/resources/css/owl.carousel.css">				
 			<link rel="stylesheet" href="${context}/resources/css/main.css">
 			<link rel="stylesheet" href="${context}/resources/css/style.css" />
+			<script src="${context}/resources/js/app.js"></script>
+			<script src="${context}/resources/js/vendor/jquery-2.2.4.min.js"></script>
+			<script src="${context}/resources/js/popper.min.js"></script>
+			<script src="${context}/resources/js/vendor/bootstrap.min.js"></script>			
+			<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>			
+	  		<script src="${context}/resources/js/easing.min.js"></script>			
+			<script src="${context}/resources/js/hoverIntent.js"></script>
+			<script src="${context}/resources/js/superfish.min.js"></script>	
+			<script src="${context}/resources/js/jquery.ajaxchimp.min.js"></script>
+			<script src="${context}/resources/js/jquery.magnific-popup.min.js"></script>	
+	    	<script src="${context}/resources/js/jquery.tabs.min.js"></script>						
+			<script src="${context}/resources/js/jquery.nice-select.min.js"></script>	
+	        <script src="${context}/resources/js/isotope.pkgd.min.js"></script>			
+			<script src="${context}/resources/js/waypoints.min.js"></script>
+			<script src="${context}/resources/js/jquery.counterup.min.js"></script>
+			<script src="${context}/resources/js/simple-skillbar.js"></script>							
+			<script src="${context}/resources/js/owl.carousel.min.js"></script>							
+			<script src="${context}/resources/js/mail-script.js"></script>	
+			<script src="${context}/resources/js/main.js"></script>	
 </head>
 	<body>
 		<div id="wrapper">
 			<div id="top">
 				<tiles:insertAttribute name="header"></tiles:insertAttribute>
+			</div>
+			<div id="under">
+				<tiles:insertAttribute name="nav"></tiles:insertAttribute>
 			</div>
 			<div id="middle">
 				<tiles:insertAttribute name="content"></tiles:insertAttribute>
@@ -45,28 +67,9 @@
 				<tiles:insertAttribute name="footer"></tiles:insertAttribute>
 			</div>
 		</div>
-		<script src="${context}/resources/js/app.js"></script>
-		<script src="${context}/resources/js/vendor/jquery-2.2.4.min.js"></script>
-		<script src="${context}/resources/js/popper.min.js"></script>
-		<script src="${context}/resources/js/vendor/bootstrap.min.js"></script>			
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>			
-  		<script src="${context}/resources/js/easing.min.js"></script>			
-		<script src="${context}/resources/js/hoverIntent.js"></script>
-		<script src="${context}/resources/js/superfish.min.js"></script>	
-		<script src="${context}/resources/js/jquery.ajaxchimp.min.js"></script>
-		<script src="${context}/resources/js/jquery.magnific-popup.min.js"></script>	
-    	<script src="${context}/resources/js/jquery.tabs.min.js"></script>						
-		<script src="${context}/resources/js/jquery.nice-select.min.js"></script>	
-        <script src="${context}/resources/js/isotope.pkgd.min.js"></script>			
-		<script src="${context}/resources/js/waypoints.min.js"></script>
-		<script src="${context}/resources/js/jquery.counterup.min.js"></script>
-		<script src="${context}/resources/js/simple-skillbar.js"></script>							
-		<script src="${context}/resources/js/owl.carousel.min.js"></script>							
-		<script src="${context}/resources/js/mail-script.js"></script>	
-		<script src="${context}/resources/js/main.js"></script>	
+		
 		<script>
 			app.init('${context}');	
-			user.setUser('${user}');
 		</script>	
 	</body>
 </html>

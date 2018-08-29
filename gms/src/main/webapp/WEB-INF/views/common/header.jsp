@@ -8,7 +8,7 @@
 			      </div>
 			      <nav id="nav-menu-container">
 			        <ul class="nav-menu">
-			          <li><a id="">Home</a></li>
+			          <li><a id="home_btn">Home</a></li>
 			          <li><a id="">About</a></li>
 			          <li class="menu-has-children"><a href="">Member</a>
 			            <ul>
@@ -32,4 +32,4 @@
 			      </nav><!-- #nav-menu-container -->		    		
 		    	</div>
 		    </div>
-</header><!-- #header -->
+</header>

@@ -33,7 +33,7 @@
 			<input type="checkbox" name="subject" value ="Spring"/>Spring
     		<br>
   			프로젝트역할 :<br>
-		    <select name="roll" id="roll">
+		    <select name="roll" id="roll" class="select">
 		    <option value="팀장">팀장</option>
 		    <option value="프론트 담당">프론트개발</option>
 		    <option value="백단 담당">백단개발</option>
