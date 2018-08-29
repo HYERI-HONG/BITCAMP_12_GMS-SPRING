@@ -5,16 +5,16 @@
 				<div class="container">
 					<div class="row fullscreen align-items-center justify-content-between">
 						<div class="col-lg-6 col-md-6 banner-left">
-							<h6>동해가 자랑하는 </h6>
-							<h1>당대 최고의 가수 <br>★홍★혜★리★</h1>
+							<h6>This is  </h6>
+							<h1>GRADE MANAGEMENT SYSTEM</h1>
 							<p>
-								천년 만년
+							The Spring Framework is an application framework and inversion of control container for the Java platform. 
+							The framework's core features can be used by any Java application, but there are extensions for building web applications. 
 							</p>
 							<a href="#" class="primary-btn text-uppercase">Let's start!</a>
 						</div>
 						<div class="col-lg-6 col-md-6 banner-right d-flex align-self-end">
-							<iframe width="640" height="360" src="https://www.youtube.com/embed/AZCagQKbzcI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-							<%-- <img class="img-fluid" src="${context}/resources/img/hero-img.png" alt=""> --%>
+						<img class="img-fluid" src="${context}/resources/img/hero-img.png" alt=""> 
 						</div>
 					</div>
 				</div>					

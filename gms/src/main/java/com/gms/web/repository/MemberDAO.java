@@ -11,7 +11,7 @@ public interface MemberDAO {
 	public List<?> selectSome(Map<?,?> p);
 	public MemberDTO selectOne(String p);
 	public void count(Map<?,?> p);
-	public void update(MemberDTO p);
+	public void update(Map<?,?> p);
 	public void delete(MemberDTO p);
 	public boolean login(MemberDTO p);
 }

@@ -77,7 +77,7 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 	@Override
-	public void modify(MemberDTO p) {
+	public void modify(Map<?,?> p) {
 		memberDAO.update(p);
 		
 	}

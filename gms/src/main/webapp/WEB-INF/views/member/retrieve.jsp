@@ -3,10 +3,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <div id="contentBox">
-		<div id="mypage_content">
+	<div id="retrieve_content">
 		<h3 align="center">마이페이지</h3>
-		<br><br><br>
-			<table id="mypage">
+		<br><br>
+			<table id="retrieve">
 			<tr>
 				<%-- <td rowspan="3" colspan="2" background="#ff8000"><img src="${img}${imgpath}"/></td> --%>
 				<td rowspan="4" colspan="2" background="#ff8000"><img src=""/></td>
@@ -44,7 +44,8 @@
 			<%-- <c:if test="${from eq member}">
 				<h4 align="center"><a id='myPageMoveToUpdate'>회원 정보 수정  </a>/<a id='myPageMoveToDelete'>  회원 탈퇴</a></h4>
 			</c:if> --%>
-			<h4 align="center"><a id='goUpdate'>회원 정보 수정  </a>/<a id='goDelete'>  회원 탈퇴</a></h4>
+			<br><br>
+			<h4 align="center"><a id='goModify'>회원 정보 수정  </a>/<a id='goRemove'>  회원 탈퇴</a></h4>
 		</div>
 </div>
 

@@ -21,12 +21,17 @@ public class HomeController {
 		session.setAttribute("context", context);
 		return "public:common/content.tiles";
 	}
-	@RequestMapping("/move/{dir}/{page}")
+	@RequestMapping("/move/{dir}/{page}/{auth}")
 	public String move(
 			@PathVariable String dir,
-			@PathVariable String page) {
+			@PathVariable String page,
+			@PathVariable String auth) {
 		logger.info("HomeController ::: move(){}");
-		return "public:"+dir+"/"+page+".tiles";
+		String rs ="public:"+dir+"/"+page+".tiles";
+		if(auth.equals("on")) {
+			rs="private:"+dir+"/"+page+".tiles";
+		}
+		return rs;
 	}
 	
 }

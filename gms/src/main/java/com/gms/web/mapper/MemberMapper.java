@@ -46,7 +46,7 @@ public class MemberMapper implements MemberDAO{
 	}
 
 	@Override
-	public void update(MemberDTO p) {
+	public void update(Map<?,?> p) {
 		SqlSession sqlSession = factory.openSession();
 		sqlSession.update(ns+".update",p);
 		

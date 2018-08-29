@@ -1,16 +1,14 @@
 package com.gms.web.controller;
-import java.util.HashMap;
 import java.util.Map;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.gms.web.domain.MemberDTO;
 import com.gms.web.service.MemberService;
@@ -25,7 +23,7 @@ public class MemberController {
 	public String add(@ModelAttribute("member") MemberDTO member) {
 		logger.info("MemberController ::: add(){}");
 		memberService.add(member);
-		return "redirect:/move/member/login";
+		return "redirect:/move/member/login/off";
 	}
 	@RequestMapping("/list")
 	public void list() {}
@@ -33,20 +31,21 @@ public class MemberController {
 	public void search() {}
 	
 	@RequestMapping("/retrieve")
-	public void retrieve(@ModelAttribute MemberDTO member) {
-		MemberDTO mem =memberService.retrieve(member.getUserid());
+	public String retrieve(@ModelAttribute MemberDTO member, Model model) {
+		model.addAttribute("user", memberService.retrieve(member.getUserid()));
+		return "";
 	}
 	@RequestMapping("/count")
 	public void count() {}
 	
 	
 	@RequestMapping(value="/modify", method=RequestMethod.POST)
-	public String modify(@ModelAttribute MemberDTO member) {
-		logger.info("MemberController ::: remove(){}");
-		member.setPassword("test");
-		memberService.modify(member);
-		
-		return "";
+	public String modify(@RequestParam Map<String,String> map , Model model) {
+		logger.info("MemberController ::: modify(){}");
+		map.put("userid", "a01");
+		memberService.modify(map);
+		model.addAttribute("user", memberService.retrieve(map.get("userid")));
+		return "mypage";
 	}
 	@RequestMapping(value="/remove", method=RequestMethod.POST)
 	public void remove(@ModelAttribute MemberDTO member) {
@@ -58,12 +57,12 @@ public class MemberController {
 	
 	@RequestMapping(value="/login", method=RequestMethod.POST )
 	public String login(@ModelAttribute("member") MemberDTO member, Model model) {
-		String rs ="login_success";
 		logger.info("MemberController ::: login(){}");
+		String rs ="mypage";
 		if(memberService.login(member)) {
 			model.addAttribute("user", memberService.retrieve(member.getUserid()));
 		}else {
-			rs="redirect:/move/member/login";
+			rs="redirect:/move/member/login/off";
 		}	
 		return rs;
 	}

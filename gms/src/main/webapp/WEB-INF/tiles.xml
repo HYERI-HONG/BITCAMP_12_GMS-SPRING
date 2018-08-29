@@ -10,7 +10,11 @@
 	<definition name="public:*/*.tiles" extends="public">
 		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
 	</definition>
-	<definition name="login_success" extends="public">
+	<definition name="private:*/*.tiles" extends="public">
+		<put-attribute name="header" value="/WEB-INF/views/member/header.jsp"/>
+		<put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp"/>
+	</definition>
+	<definition name="mypage" extends="public">
 		<put-attribute name="header" value="/WEB-INF/views/member/header.jsp"/>
 		<put-attribute name="content" value="/WEB-INF/views/member/retrieve.jsp"/>
 	</definition>

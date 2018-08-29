@@ -1,8 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <div id="contentBox">
-		<div id="menu_content">
+	<div id="add_content">
 		<h2 align="center">회원 가입</h2>
-		<form id ="joinForm" name="joinForm">
+		<br>
+		<form id ="addForm" name="addForm">
 			아이디 : <br>
 			<input type="text" name="userid" required/>
 			<br>
@@ -40,7 +41,7 @@
 		    <option value="무임승차">무임승차</option>
 		    </select>
 			<br><br>
-			<input id="join_submit" type="button"  value = "등록" />	
+			<input id="add_submit" type="button"  value = "등록" />	
 		</form>
-		</div>
+	</div>
 </div>

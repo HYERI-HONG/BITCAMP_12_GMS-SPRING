@@ -10,7 +10,7 @@ var app={
 		console.log('step3');
 		app.setContentView();
 		$('#login_btn').click(()=>{
-			location.href = app.x()+'/move/member/login';
+			location.href = app.x()+'/move/member/login/off';
 		});
 		$('#login_submit').click(()=>{
 			$('#loginForm').attr({
@@ -22,41 +22,44 @@ var app={
 		$('#logout_btn').click(()=>{
 			location.href = app.x()+'/member/logout';
 		});
-		$('#join_btn').click(()=>{
-			location.href = app.x()+'/move/member/add';
+		$('#add_btn').click(()=>{
+			location.href = app.x()+'/move/member/add/off';
 		});
-		$('#join_submit').click(()=>{
+		$('#add_submit').click(()=>{
 			/*var form = document.getElementById('joinForm');
 			form.action = app.x()+"/member/add";
 			form.method = "POST";
 			form.submit();	*/
-			$('#joinForm')
+			$('#addForm')
 			.attr({
 				action:app.x()+"/member/add",
 				method:"POST"
 			})
 			.submit();
 		});
-		$('#goUpdate').click(()=>{
-			location.href = app.x()+'/move/member/modify';
+		$('#goModify').click(()=>{
+			location.href = app.x()+'/move/member/modify/on';
 		});
-		$('#update_submit').click(()=>{
-			$('#updateForm').attr({
+		$('#modify_submit').click(()=>{
+			/*$('#modifyForm').innerHTML= "input type='hidden' name='userid' value='test'"*/
+			$('#modifyForm').attr({
 				action:app.x()+"/member/modify",
 				method:"POST"
 			}).submit();
 			
 		});
-		$('#goDelete').click(()=>{
-			location.href = app.x()+'/move/member/remove';
+		$('#goRemove').click(()=>{
+			location.href = app.x()+'/move/member/remove/on';
 		});
-		$('#delete_submit').click(()=>{
-			$('#deleteForm').attr({
+		$('#remove_submit').click(()=>{
+			$('#removeForm').attr({
 				action:app.x()+"/member/remove",
 				method:"POST"
 			}).submit();
 			
 		});
+		$('modifyId').text(app.session.path('userid'));
+		
 		
 	},
 	setContentView : ()=>{
@@ -99,9 +102,6 @@ var user = {
 		sessionStorage.setItem('age',x.age);
 		sessionStorage.setItem('ssn',x.ssn);
 		sessionStorage.setItem('password',x.password);
-	},
-	getUser : x=>{
-		return sessionStorage.getItem(x);
 	}
 }
 

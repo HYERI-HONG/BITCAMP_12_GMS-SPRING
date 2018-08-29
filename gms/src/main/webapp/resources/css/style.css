@@ -8,138 +8,45 @@ div#content{
 }
 div#login_content{
 	border : 1px solid white;
-	margin : 130px 60px;
+	margin : 160px 60px;
 	text-align : center;
 }
-
-div#admin_content_box{
-	clear: both;
-	color : black;
-	text-align : center;
-}
-div#content-box{
-	clear: both;
-	color : white;
-	margin-top: 200px;
-}
-
-ul#menu{
-	text-align: right;
-	margin: 0;
-	border-bottom: 1px #8000ff;
-	position: relative;
-}
-ul#menu li{
-	display: inline;
-	list-style: none;
-	background-color: #408080
-}
-ul#menu li a{
-	padding: 10px 20px;
-	background-color: #ff8000;
-	font-weight: bold;
-	text-decoration: none;
-	line-height: 2.8em;
-	color: black;
-}
-ul#menu li a:hover{
-	background-color: #ff80c0;
-	text-decoration: none;
-}
-ul#menu li a:active{
-
-	background-color: #804000;
-	text-decoration: none;
-}
-.memberlist{
+div#add_content{
 	border : 1px solid black;
+	margin : 160px 60px;
 	text-align : center;
-	margin : auto;
-	background-color: white;
-	width : 80%;
 }
-.memberlist tr th{
+div#retrieve_content{
+	margin : 160px 60px;
+	text-align : center;
+}
+table#retrieve{
 	border : 1px solid black;
-	background-color : #ff8000;
-}
-.memberlist tr td{border : 1px solid black} 
-
-.search_content{
-    margin-bottom: 20px;
-    float : center;
-}
-.search_button{
-	width: 50px;
-}
-table#mypage{
-	border : 1px solid white;
 	width : 800px;
 	height : 100px;
 	text-align : center;
 	margin : auto;
 }
-table#mypage tr th{
+table#retrieve tr th{
 	
 }
-table#mypage tr td{
+table#retrieve tr td{
 	border : 1px solid black;
 	text-align : center;
 }
-
-
-div#mypage_content{
+div#modify_content{
+	border : 1px solid black;
+	margin : 160px 60px;
+	text-align : center;
+	
+}
+div#remove_content{
+	border : 1px solid white;
 	margin : 160px 60px;
 	text-align : center;
 }
-div#delete_content{
-	border : 1px solid white;
-	margin : 145px 60px;
+.select{
 	text-align : center;
-}
-div#update_content{
-	border : 1px solid white;
-	margin : 50px 60px;
-	text-align : center;
-}
-
-div#menu_content{
-	border : 1px solid white;
-	margin : 20px 60px;
-	text-align : center;
-}
-div#mypage_footer{
-	clear: both;
-	color: white;
-	text-align: center;
-	padding-top: 50px;
-	padding-bottom: 50px;
-	line-height: normal;
-	font-size: 0.8em;
-	background-image : url('../img/home/footer-front.png');	
-	background-size: contain;
-}
-div#menu_footer{
-	clear: both;
-	color: white;
-	text-align: center;
-	padding-top: 50px;
-	padding-bottom: 50px;
-	line-height: normal;
-	font-size: 0.8em;
-	background-image : url('../img/home/footer-front.png');	
-	background-size: contain;
-}
-.pageBox{
-	list-style : none; /* remove list bullets */
-	padding : 0;
-	margin : 0;
-}
-.pageBox li{
-	display : inline;
-}
-div#menu_content{
-	border : 1px solid white;
-	margin : 20px 60px;
-	text-align : center;
+	margin : auto;
 }
 
