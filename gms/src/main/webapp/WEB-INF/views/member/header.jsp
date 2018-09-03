@@ -29,7 +29,7 @@
 			          </li>					          					          		          
 			          <li><a href="">Contact</a></li>
 			        </ul>
-			      </nav><!-- #nav-menu-container -->		    		
+			      </nav>	    		
 		    	</div>
 		    </div>
 </header>
